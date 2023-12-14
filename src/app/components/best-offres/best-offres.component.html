@@ -1,0 +1,55 @@
+<section class="section popular">
+  <div class="container">
+
+    <p class="section-subtitle">Featured Tours</p>
+
+    <h2 class="h2 section-title">Most Popular Tours</h2>
+
+
+    <div class="popular-list">
+
+        <div class="popular-card" *ngFor="let i of offres.slice(0, 3) | filter:term">
+
+          <figure class="card-banner">
+            <a [routerLink]="['/reserver-offre/',i.id]">
+              <img [src]="getSafeImage(i.image)" width="740" height="518" loading="lazy"
+                alt="Kuala Lumpur, Malaysia" class="img-cover">
+            </a>
+
+            <span class="card-badge">
+              <ion-icon name="time-outline"></ion-icon>
+
+              <time datetime="P12D">{{i.duree}}</time>
+            </span>
+          </figure>
+
+          <div class="card-content">
+
+            <div class="card-wrapper">
+              <div class="card-price">{{i.prix}} dt</div>
+
+              <div class="card-rating">
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star-outline"></ion-icon>
+
+                <data value="2">(2)</data>
+              </div>
+            </div>
+            <h3 class="card-title">
+              <a [routerLink]="['/reserver-offre/',i.id]">{{i.description}}</a>
+            </h3>
+
+            <address class="card-location">{{i.destination.name}}</address>
+
+          </div>
+        </div>
+        <a routerLink="offres" class="btn-link" style="display: flex; justify-content: center; margin-top: 20px;">
+          <span>show More</span>
+          <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+        </a>
+    </div>
+  </div>
+</section> 

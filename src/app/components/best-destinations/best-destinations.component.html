@@ -1,0 +1,96 @@
+<section class="section destination">
+    <div class="container">
+
+      <p class="section-subtitle">Destinations</p>
+
+      <h2 class="h2 section-title">Choose Your Place</h2>
+
+      <ul class="destination-list">
+
+        <li class="w-50" *ngFor="let i of destinations.slice(0, 2) | filter:term">
+          <a routerLink="destinations" class="destination-card">
+
+            <figure class="card-banner">
+              <img [src]="getSafeImage(i.image)" width="1140" height="1100" loading="lazy"
+                alt="Malé, Maldives" class="img-cover">
+            </figure>
+
+            <div class="card-content">
+              <p class="card-subtitle">{{i.name}}</p>
+              <h3 class="h3 card-title">{{i.pays}}</h3>
+            </div>
+          </a>
+        </li>
+
+        <!-- <li class="w-50">
+          <a href="#" class="destination-card">
+
+            <figure class="card-banner">
+              <img src="./assets/images/destination-2.jpg" width="1140" height="1100" loading="lazy"
+                alt="Bangkok, Thailand" class="img-cover">
+            </figure>
+
+            <div class="card-content">
+              <p class="card-subtitle">Bangkok</p>
+
+              <h3 class="h3 card-title">Thailand</h3>
+            </div>
+
+          </a>
+        </li> -->
+
+        <li *ngFor="let i of destinations.slice(2, 5) | filter:term">
+          <a routerLink="destinations" class="destination-card">
+
+            <figure class="card-banner">
+              <img [src]="getSafeImage(i.image)" width="1110" height="480" loading="lazy"
+                alt="Kuala Lumpur, Malaysia" class="img-cover">
+            </figure>
+
+            <div class="card-content">
+              <p class="card-subtitle">{{i.name}}</p>
+
+              <h3 class="h3 card-title">{{i.pays}}</h3>
+            </div>
+
+          </a>
+        </li>
+
+        <!-- <li>
+          <a href="#" class="destination-card">
+
+            <figure class="card-banner">
+              <img src="./assets/images/destination-4.jpg" width="1110" height="480" loading="lazy"
+                alt="Kathmandu, Nepal" class="img-cover">
+            </figure>
+
+            <div class="card-content">
+              <p class="card-subtitle">Kathmandu</p>
+
+              <h3 class="h3 card-title">Nepal</h3>
+            </div>
+
+          </a>
+        </li>
+
+        <li>
+          <a href="#" class="destination-card">
+
+            <figure class="card-banner">
+              <img src="./assets/images/destination-5.jpg" width="1110" height="480" loading="lazy"
+                alt="Jakarta, Indonesia" class="img-cover">
+            </figure>
+
+            <div class="card-content">
+              <p class="card-subtitle">Jakarta</p>
+
+              <h3 class="h3 card-title">Indonesia</h3>
+            </div>
+
+          </a>
+        </li> -->
+
+      </ul>
+
+    </div>
+  </section>

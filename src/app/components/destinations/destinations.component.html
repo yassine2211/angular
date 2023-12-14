@@ -1,0 +1,38 @@
+<section class="destination">
+    <div class="container">
+
+        <p class="section-subtitle">Destinations</p>
+
+        <h2 class="h2 section-title">Choose Your Place</h2>
+
+        <div class="row">
+            <div class="form-group" style="display: flex; align-items: center;">
+                <input type="text" class="form-control" [(ngModel)]="term" name="a" placeholder="search" style="margin-right: 5px;">
+                <input type="submit" (click)="chercher(term)" class="btn btn-primary py-3 px-5" value="search">
+            </div>
+        </div>
+
+        <ul class="destination-list">
+
+            <li *ngFor="let i of destinations ">
+                <a [routerLink]="['/offres/',i.name]" class="destination-card">
+
+                    <figure class="card-banner">
+                        <img [src]="getSafeImage(i.image)"  width="1110" height="480" loading="lazy"
+                            alt="Kuala Lumpur, Malaysia" class="img-cover">
+                    </figure>
+
+                    <div class="card-content">
+                        <p class="card-subtitle">{{i.name}}</p>
+
+                        <h3 class="h3 card-title">{{i.pays}}</h3>
+                    </div>
+
+                </a>
+            </li>
+
+            
+        </ul>
+
+    </div>
+</section>

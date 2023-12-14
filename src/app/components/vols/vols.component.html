@@ -1,0 +1,106 @@
+<section class="package" id="package">
+    <div class="container">
+
+        <p class="section-subtitle">Popular Packeges</p>
+
+        <h2 class="h2 section-title">Nos Vols</h2>
+
+        <p class="section-text">
+            Fusce hic augue velit wisi quibusdam pariatur, iusto primis, nec nemo, rutrum. Vestibulum cumque laudantium.
+            Sit ornare
+            mollitia tenetur, aptent.
+        </p>
+
+        <div class="row">
+            <div class="form-group" style="display: flex; align-items: center;">
+                <input type="text" class="form-control" [(ngModel)]="term" name="a" placeholder="search" style="margin-right: 5px;">
+                <input type="submit" (click)="chercher(term)" class="btn btn-primary py-3 px-5" value="search">
+            </div>
+        </div>
+ 
+
+
+        
+        <ul class="package-list">
+
+            <li *ngFor="let i of vols">
+                <div class="package-card">
+
+                    <figure class="card-banner">
+                        <img src="./assets/images/istockphoto-1414160809-612x612.jpg"
+                            alt="Experience The Great Holiday On Beach" loading="lazy">
+                    </figure>
+
+                    <div class="card-content">
+
+                        <h3 class="h3 card-title">vol a {{i.name}}</h3>
+
+                        <p class="card-text">
+                            {{i.classe}}
+                        </p>
+
+                        <ul class="card-meta-list">
+
+                            <li class="card-meta-item">
+                                <div class="meta-box">
+                                    <ion-icon name="time"></ion-icon>
+
+                                    <p class="text">{{i.dateDep}}</p>
+                                </div>
+                            </li>
+
+                            <li class="card-meta-item">
+                                <div class="meta-box">
+                                    <ion-icon name="people"></ion-icon>
+
+                                    <p class="text">pax: 10</p>
+                                </div>
+                            </li>
+
+                            <li class="card-meta-item">
+                                <div class="meta-box">
+                                    <ion-icon name="location"></ion-icon>
+
+                                    <p class="text">{{i.depart}}</p>
+                                </div>
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                    <div class="card-price">
+
+                        <div class="wrapper">
+
+                            <p class="reviews">(25 reviews)</p>
+
+                            <div class="card-rating">
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                            </div>
+
+                        </div>
+
+                        <p class="price">
+
+                            <span> {{i.prix}}/DT par personne</span>
+                        </p>
+
+                        <button [routerLink]="['/reserver-vol/',i.id]" class="btn btn-secondary">Book Now</button>
+
+                    </div>
+
+                </div>
+            </li>
+
+
+
+        </ul>
+
+
+    </div>
+</section>

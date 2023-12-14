@@ -1,0 +1,65 @@
+<div class="contact">
+	<div class="contact-main">
+		<div class="container">
+			<div class="contact-top">
+				<h3>{{title}}</h3>
+			</div>
+			<div class="contact-bottom">
+				<div class="col-md-7 contact-left">
+					<div class="col-lg-12">
+						<form [formGroup]="addVolForm">
+							<div class="form-group">
+								<input type="text" class="form-control" [(ngModel)]="vol.depart" formControlName="depart" name="a"
+									placeholder="depart">
+							</div>
+							<div class="text-danger"
+								*ngIf="addVolForm.controls['depart'].invalid && (addVolForm.controls['depart'].dirty || addVolForm.controls['depart'].touched)">
+								<div *ngIf="addVolForm.controls['depart'].errors?.['required']">required</div>
+							</div>
+
+							<div class="form-group">
+								<input type="text" class="form-control" [(ngModel)]="vol.name" formControlName="arrivee" name="a"
+									placeholder="arrivee">
+							</div>
+							<div class="text-danger"
+								*ngIf="addVolForm.controls['arrivee'].invalid && (addVolForm.controls['arrivee'].dirty || addVolForm.controls['arrivee'].touched)">
+								<div *ngIf="addVolForm.controls['arrivee'].errors?.['required']">required</div>
+							</div>
+							<div class="form-group">
+								<input type="text" class="form-control" [(ngModel)]="vol.prix" formControlName="prix" name="b"
+									placeholder="prix">
+							</div>
+							<div class="text-danger"
+								*ngIf="addVolForm.controls['prix'].invalid && (addVolForm.controls['prix'].dirty || addVolForm.controls['prix'].touched)">
+								<div *ngIf="addVolForm.controls['prix'].errors?.['required']">required</div>
+							</div>
+
+							<div class="form-group">
+								<input type="date" class="form-control" [(ngModel)]="vol.dateDep" formControlName="dateDep" name="d"
+									placeholder="date depart">
+							</div>
+
+							<div class="form-group">
+								<label for="pays">Classe :</label>
+								<select class="form-control" [(ngModel)]="vol.classe" formControlName="classe" name="f">
+									<option value="classe economique">Classe économique</option>
+									<option value="classe premiere">Classe première</option>
+									<option value="classe affaires">Classe affaires</option>
+									<option value="classe premium">Classe premium</option>
+								</select>
+							</div>
+
+
+							<div class="form-group">
+								<input type="submit" (click)="add()" [disabled]="this.addVolForm.invalid"
+									class="btn btn-primary py-3 px-5" value="submit">
+							</div>
+						</form>
+					</div>
+				</div>
+
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+</div>
